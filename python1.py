@@ -1,11 +1,8 @@
-from asyncio import format_helpers
 
 
-def firstFunction():
-    maxTerms=0
+def Longest_Collatz():
     temp=1
     i=13
-    j=i
     number=0
     max=0
     for i in range(1,1000000):
@@ -14,17 +11,18 @@ def firstFunction():
             temp+=1
             if(i % 2 ==0):
                 i=i/2
-            #   print(i)
             elif(i % 2 !=0):
                 i=(3*i)+1
-            #   print(i)
         if max<temp:
             max=temp
             number=current
-        temp=0
-   
-        #    print("number of terms are:",maxTerms)
+        temp=0   
     return number
+
+
+
+
+
 
 def Factorial(n):
     r=1
@@ -35,7 +33,6 @@ def Factorial(n):
 def sum_digit(d):
     sum=0
     digit=Factorial(d)
-    print(digit)
     digit_string=str(digit)
     for i in digit_string:
         sum+=int(i)
@@ -82,7 +79,6 @@ def dictionary_mapping(str):
             value.append("a")
             value.append("b")
             value.append("c")
-            print(value)
         elif key=="3":
             value=dictionary[key]
             value.append("d")
@@ -130,13 +126,10 @@ def letterCombinations(str):
     list=[]
     j=1
     dictionary_mapping(str)
-    # print(dictionary)
     for i in dictionary:
-        # print(dictionary[i])
         item=(i,dictionary[i])
         list.append(item)
     string_length=len(str)
-    # print(string_length)
     if (string_length!=1 or string_length!=0):
         for i in range(len(list)-1):
             for k1 in range(0,3):
@@ -146,15 +139,13 @@ def letterCombinations(str):
                     result[temp]=True
                     temp=""
             j+=1
-            print(result)
     if(string_length==1):
         for i in range(len(list)):
             for j in range(0,3):
                 temp+=list[i][1][j]
                 result[temp]=True
                 temp=""
-        print(result)
-
+    return result
       
 
             
@@ -166,28 +157,24 @@ def letterCombinations(str):
 
 
 
-# Factorial(10)
-sum_digit(10)
-letterCombinations("2")
 
-# height1=[1,8,6,2,5,4,8,3,7]
-# height3=[3,9,3,4,7,2,12,6]
-# height2=[1,2]                    
-# area1=maxArea(height1)
-# area2=maxArea(height2)
-# area3=maxArea(height3)
-# print(area1)
-# print(area2)
-# print(area3)
-        
-
-        
-
-
-# dictionary_preparation("23")
-
-# a=firstFunction()
-# print("The number with longest chain is "+ str(a))
+display_result=sum_digit(10)
+print("The sum of the digits of the factorial is:",display_result)
+l1=letterCombinations("2")
+l2=letterCombinations("23")
+height1=[1,8,6,2,5,4,8,3,7]
+height3=[3,9,3,4,7,2,12,6]
+height2=[1,2]                    
+area1=maxArea(height1)
+area2=maxArea(height2)
+area3=maxArea(height3)
+print(l1)
+print(l2)
+print("The max area is:",area1)
+print("The max area is:",area2)
+print("The max area is:",area3)
+a=Longest_Collatz()
+print("The number with longest chain is "+ str(a))
 
 
 
