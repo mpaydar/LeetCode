@@ -1,3 +1,6 @@
+from asyncio import format_helpers
+
+
 def firstFunction():
     maxTerms=0
     temp=1
@@ -22,6 +25,27 @@ def firstFunction():
    
         #    print("number of terms are:",maxTerms)
     return number
+
+def Factorial(n):
+    r=1
+    for i in range (n,0,-1):
+        r*=i
+    return r
+
+def sum_digit(d):
+    sum=0
+    digit=Factorial(d)
+    print(digit)
+    digit_string=str(digit)
+    for i in digit_string:
+        sum+=int(i)
+    return sum
+
+
+
+
+
+
 
 
 
@@ -142,7 +166,8 @@ def letterCombinations(str):
 
 
 
-
+# Factorial(10)
+sum_digit(10)
 letterCombinations("2")
 
 # height1=[1,8,6,2,5,4,8,3,7]
