@@ -17,7 +17,7 @@ def Longest_Collatz():
             max=temp
             number=current
         temp=0   
-    return number
+    return [number,max]
 
 
 
@@ -157,9 +157,9 @@ def letterCombinations(str):
 
 
 
-
+# Function Calls/invocation
+print("Please wait....prcessing")
 display_result=sum_digit(10)
-print("The sum of the digits of the factorial is:",display_result)
 l1=letterCombinations("2")
 l2=letterCombinations("23")
 height1=[1,8,6,2,5,4,8,3,7]
@@ -168,13 +168,35 @@ height2=[1,2]
 area1=maxArea(height1)
 area2=maxArea(height2)
 area3=maxArea(height3)
-print(l1)
-print(l2)
-print("The max area is:",area1)
-print("The max area is:",area2)
-print("The max area is:",area3)
 a=Longest_Collatz()
-print("The number with longest chain is "+ str(a))
+
+
+
+#Ouput:
+print("Output for sum of the factorial digits:")
+print("\t The sum of the digits of the factorial is:",display_result)
+print("\n")
+
+print("Ouput for letter combination problem")
+print("\t",l1)
+print("\t",l2)
+
+print("\n")
+
+
+print("Output for max area problem: ")
+print("\t The max area is:",area1)
+print("\t The max area is:",area2)
+print("\t The max area is:",area3)
+
+
+print("\n")
+
+
+
+print("Output for Longest_Collatz function: ")
+print("\t The number with longest chain is",a[0])
+print("\t Length of the chain is",a[1])
 
 
 
