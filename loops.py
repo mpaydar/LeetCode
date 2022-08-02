@@ -21,7 +21,7 @@ target=6
 my_dictionary={}
 for index,value in enumerate(nums):
     difference=target-value
-    if value in my_dictionary:
+    if difference in my_dictionary:
         print (my_dictionary[difference],index)
     else:
         my_dictionary[value]=index
