@@ -35,9 +35,9 @@ def over_lap_check(numbers):
         elif flag==True:
             list_check2.append(numbers[n])
 
+
       
 
-        index_check+=1
     number_of_evaluated=len(list_check1)+len(list_check2)
     if number_of_evaluated==4:
         max_value=max(list_check1)
@@ -48,3 +48,4 @@ def over_lap_check(numbers):
         if  min_value<max_value :
                 print("There is an overlap")
 
+over_lap_check([1,4,3,8,9,10])
