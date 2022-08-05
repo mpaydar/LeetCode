@@ -1,21 +1,24 @@
 
 import numbers
+from xmlrpc.client import Boolean
+
+from numpy import integer
+from pandas import array
 
 
 def evaluation(x,y):
     return x<y
 
 
-def over_lap_check(numbers):
-    list_check1=[]
-    list_check2=[]
-    flag=False
-    max_value=0
-    min_value=0
-    overlap_counter=0
-    key_index=0
-    overlap_dictionary={}
-    x=[]
+def over_lap_check(numbers:list):
+    list_check1 : list=[]
+    list_check2 : list=[]
+    flag : Boolean=False
+    max_value : integer=0
+    min_value : integer=0
+    overlap_counter : integer=0
+    overlap_dictionary : dict={}
+    x : list=[]
     for n in range(len(numbers)):
         number_of_evaluated=len(list_check1)+len(list_check2) 
         x=numbers[n] #[1,2]
@@ -31,10 +34,7 @@ def over_lap_check(numbers):
 
             if  (evaluation(min_value,max_value)==True):
                 overlap_counter+=1
-                print("Overlap#:",overlap_counter)
                 overlap_dictionary[n]=(list_check1,list_check2)
-
-
 
 
         if len(list_check1)==2 and flag==False:
@@ -60,9 +60,11 @@ def over_lap_check(numbers):
         min_value=min(list_check2)  
         if  (evaluation(min_value,max_value)==True):
                 overlap_counter+=1
-                print("Overlap#:",overlap_counter)
                 overlap_dictionary[n]=(list_check1,list_check2)
-    print(overlap_dictionary)
+    
+    print("Total overlaps:",overlap_counter)
+    print("The following intervals are overlap intervals:\n",overlap_dictionary)
+    
     
 
 over_lap_check([[1,4],[3,8],[7,10],[9,11]])
