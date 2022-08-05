@@ -13,6 +13,8 @@ def over_lap_check(numbers):
     max_value=0
     min_value=0
     overlap_counter=0
+    key_index=0
+    overlap_dictionary={}
     x=[]
     for n in range(len(numbers)):
         number_of_evaluated=len(list_check1)+len(list_check2) 
@@ -30,6 +32,8 @@ def over_lap_check(numbers):
             if  (evaluation(min_value,max_value)==True):
                 overlap_counter+=1
                 print("Overlap#:",overlap_counter)
+                overlap_dictionary[n]=(list_check1,list_check2)
+
 
 
 
@@ -57,6 +61,8 @@ def over_lap_check(numbers):
         if  (evaluation(min_value,max_value)==True):
                 overlap_counter+=1
                 print("Overlap#:",overlap_counter)
+                overlap_dictionary[n]=(list_check1,list_check2)
+    print(overlap_dictionary)
     
 
 over_lap_check([[1,4],[3,8],[7,10],[9,11]])
