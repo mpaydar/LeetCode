@@ -13,18 +13,25 @@ def over_lap_check(numbers):
     max_value=0
     min_value=0
     overlap_counter=0
+    x=[]
     for n in range(len(numbers)):
         number_of_evaluated=len(list_check1)+len(list_check2) 
-        if number_of_evaluated==4:        
+        x=numbers[n] #[1,2]
+        
+        if number_of_evaluated==4:
+        
             max_value=max(list_check1)
             min_value=min(list_check2)
-            if  (evaluation(min_value,max_value)==True):
-                overlap_counter+=1
-                print("Overlap#",overlap_counter)
-
-            if n!=len(numbers)-1:
+                 
+            if n!=len(numbers):
                 list_check1=list_check2
                 list_check2=[]
+
+            if  (evaluation(min_value,max_value)==True):
+                overlap_counter+=1
+                print("Overlap#:",overlap_counter)
+
+
 
         if len(list_check1)==2 and flag==False:
             flag=True
@@ -32,11 +39,16 @@ def over_lap_check(numbers):
         if len(list_check2)==2 and flag==True:
             flag=False
             
-        elif flag==False:
-            list_check1.append(numbers[n])
+        if flag==False:
+            for i in range(2):
+                list_check1.append(x[i])
+            
        
-        elif flag==True:
-            list_check2.append(numbers[n])
+        if flag==True:
+            for i in range(2):
+                list_check2.append(x[i])
+            
+
 
     number_of_evaluated=len(list_check1)+len(list_check2)
     if number_of_evaluated==4:
@@ -44,7 +56,7 @@ def over_lap_check(numbers):
         min_value=min(list_check2)  
         if  (evaluation(min_value,max_value)==True):
                 overlap_counter+=1
-                print("Overlap",overlap_counter)
+                print("Overlap#:",overlap_counter)
     
 
-over_lap_check([1,4,3,8,9,10])
+over_lap_check([[1,4],[3,8],[7,10],[9,11]])
