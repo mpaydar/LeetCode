@@ -1,15 +1,18 @@
 def longestPalindrome(s) :
     anchor=s[-1]
+
+    if len(s) == 1 or len(s) == 0:
+        return
+
     palindrome_collection=dict()
     for start in range(len(s)):
         current_subset=s[start:]
-        print(current_subset)
         in_result = helper_function(current_subset)
-        if in_result and current_subset!="":
+        if in_result and current_subset != "":
             palindrome_collection[len(current_subset)]=current_subset
-        elif current_subset != "":
+        elif current_subset != "" and len(current_subset) != 1:
             s=s.replace(anchor,"")
-            anchor=s[-1]
+            anchor =s [-1]
 
     return palindrome_collection
 
@@ -31,13 +34,16 @@ def helper_function(subset):
         return False
 
 
+cases=["cbbd","babad","a"]
+for case in cases:
+    a=longestPalindrome(case)
+    if len(case) == 0 or len(case) == 1:
+        print("No Palindrome exist in the following string", case)
+    else:
+        print("The longest palindrome in ",case, "is", list(a.values())[0])
 
 
 
-a=longestPalindrome("babad")
-print(a)
-#baba
-# current anchor =a ; b a:aba ...
 
 
 
@@ -74,6 +80,3 @@ print(a)
 
 
 
-input_string="babad"
-result=longestPalindrome(input_string)
-print(result)
