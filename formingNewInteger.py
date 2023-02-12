@@ -4,12 +4,17 @@
 # just printing the digits of n in reverse order; you are actually constructing the new integer.
 # 123 =
 
-number = 123
+
+number = int(input("Enter a number"))
 factor = 100
 new_number = 0
-for i in range(3):
+while number != 0:
     d3 = number % 10
-    number = number // 10
-    new_number += d3 * factor          # number * 100 + number *10 + number * 1..... for n
+    new_number = new_number * 10 + d3
     factor = factor // 10
-print(new_number)
+    print("Current number is: ", number)
+    print("Current digit is: ", d3)
+    print("New number is: ", new_number)
+    number = number // 10
+
+print("The new number is: ", new_number)
