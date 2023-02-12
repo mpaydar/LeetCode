@@ -6,12 +6,10 @@
 
 
 number = int(input("Enter a number"))
-factor = 100
 new_number = 0
 while number != 0:
     d3 = number % 10
     new_number = new_number * 10 + d3
-    factor = factor // 10
     print("Current number is: ", number)
     print("Current digit is: ", d3)
     print("New number is: ", new_number)
