@@ -69,7 +69,7 @@ class singleLinkedList:
 
 
 def reverse_list(index,originalList,output):
-    '''This function will reverse the linkedList in naitve way:
+    '''This function will reverse the linkedList using recursion:
      Time complexity : O(n)'''
 
     # Base Case:
